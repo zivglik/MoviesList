@@ -1,0 +1,21 @@
+
+<button type="button" class="btn btn-secondary addnew" data-dismiss="modal"  (click)="onSelectedAddMovie()">
+    <i class="fa fa-film"></i> <span > Add New Movie</span>
+</button>
+<div class="movies-list">
+    <div app-movie-item 
+         *ngFor="let item of movieslist" 
+         [movie]="item" 
+         (onSelectedDeleteMovie)="onSelectedDeleteMovie($event)" 
+         (onSelectedEditMovie)="onSelectedEditMovie($event)" 
+         class="movie-item">
+
+    </div>
+</div>
+
+
+
+
+
+
+N

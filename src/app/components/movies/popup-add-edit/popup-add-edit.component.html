@@ -1,0 +1,82 @@
+<form [formGroup]="movieForm" (ngSubmit)="onSubmitActionEditMovie()">
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{Action}} Movie</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="closePopupEditMovie()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+     <input type="hidden" formControlName="imdbID" class="form-control"  />
+  
+      <div class="form-group">
+          <label>Title:</label>
+          <input type="text" formControlName="Title" class="form-control" [ngClass]="{ 'is-invalid': movieForm.controls['Title']?.touched &&  movieForm.get('Title').errors }" />
+          <div *ngIf="movieForm.controls['Title']?.touched &&  movieForm.hasError('required', 'Title')" class="invalid-feedback">Title is required</div>
+          <div *ngIf="movieForm.controls['Title']?.touched &&  movieForm.hasError('exist', 'Title')" class="invalid-feedback">movie title is exist</div>
+      </div>
+   
+ 
+      <div class="form-group">
+          <label>Year:</label>
+          <input type="text" formControlName="Year" class="form-control" [ngClass]="{ 'is-invalid':movieForm.controls['Year']?.touched &&  movieForm.hasError('datevalid', 'Year') }" />
+          <div *ngIf="movieForm.controls['Year']?.touched && movieForm.hasError('datevalid', 'Year')" class="invalid-feedback">
+            *Year is not valid
+          </div>
+      </div>
+
+ 
+      <div class="form-group">
+          <label>Type:</label>
+          <input type="text" formControlName="Type" class="form-control" [ngClass]="{ 'is-invalid':movieForm.controls['Type']?.touched &&   movieForm.get('Type').errors }" />
+          <div *ngIf="movieForm.controls['Type']?.touched &&  movieForm.hasError('required', 'Type')" class="invalid-feedback">
+              <div >Type is required</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label>Poster:</label>
+          <input type="text" formControlName="Poster" class="form-control" [ngClass]="{ 'is-invalid':movieForm.controls['Poster']?.touched &&  movieForm.get('Poster').errors  }" />
+          <div *ngIf="movieForm.controls['Poster']?.touched &&  movieForm.hasError('required', 'Poster')" class="invalid-feedback">
+              <div >Poster is required</div>
+          </div>
+      </div>
+  
+      <div class="form-group">
+          <label>Runtime:</label>
+          <input type="text" formControlName="Runtime" class="form-control" [ngClass]="{ 'is-invalid': movieForm.controls['Runtime']?.touched && movieForm.get('Runtime').errors  }" />
+          <div *ngIf="movieForm.controls['Runtime']?.touched && movieForm.hasError('required', 'Runtime')" class="invalid-feedback">
+              <div>Runtime is required</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label>Genre:</label>
+          <input type="text" formControlName="Genre" class="form-control" [ngClass]="{ 'is-invalid': movieForm.controls['Genre']?.touched &&  movieForm.get('Genre').errors }" />
+          <div *ngIf="movieForm.controls['Genre']?.touched &&  movieForm.hasError('required', 'Genre')" class="invalid-feedback">
+              <div>Genre is required</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label>Directorre:</label>
+          <input type="text" formControlName="Director" class="form-control" [ngClass]="{ 'is-invalid': movieForm.controls['Director']?.touched &&  movieForm.get('Director').errors  }" />
+          <div *ngIf="movieForm.controls['Director']?.touched &&   movieForm.hasError('required', 'Director')" class="invalid-feedback">
+              <div>Director is required</div>
+          </div>
+      </div>
+</div>
+</div>
+</div>
+
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal"  (click)="closePopupEditMovie()">Cancel</button>
+  <button type="button" class="btn btn-primary" type="submit"  >Save</button>
+</div>
+</form>

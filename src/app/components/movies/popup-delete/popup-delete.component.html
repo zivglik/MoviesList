@@ -1,0 +1,16 @@
+
+
+
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Delete Movie</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="closePopupDeleteMovie()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>are you sure delete <strong>{{Title}}</strong> movie.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal"  (click)="closePopupDeleteMovie()">No</button>
+    <button type="button" class="btn btn-primary" (click)="actionDeleteMovie()" >Yes</button>
+  </div>

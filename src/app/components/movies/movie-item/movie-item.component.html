@@ -1,0 +1,32 @@
+
+    
+    <figure class="movieBox" id="({{movie.imdbID}})">
+        
+        <h2>{{movie.Title | TitleFormat}}</h2>
+            <img src="{{movie.Poster}}"   />
+          
+    
+              <div class="buttons-actions">
+                
+                <a class="btn solid" href="#" (click)="SelectedDeleteMovie()" aria-label="Delete">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </a>
+
+                <a class="btn solid" href="#navigation-main" (click)="SelectedEditMovie()" aria-label="Skip to main navigation">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+         
+              </div>
+
+                    
+            <figcaption>
+              
+              <h3>
+                <div>{{movie.Year}}, {{movie.Runtime}}</div>
+                <div>{{movie.Genre}}</div>
+              </h3>
+              
+              <h4>{{movie.Director}}</h4>
+            </figcaption>
+            <a class="bgs" href="#"></a>
+          </figure>
